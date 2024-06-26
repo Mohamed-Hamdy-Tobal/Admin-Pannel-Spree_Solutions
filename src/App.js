@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from './components/layout/Layout';
-import Home from './components/pages/Home';
 import Dashboard from './components/pages/Dashboard';
 
 import {
@@ -14,11 +13,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       //  dashboard  
-      { index: true, element: <Home /> },
-      {
-        path: "/dashboard",
-        element: <Dashboard />,
-      },
+      { index: true, element: <Dashboard /> },
     ]
   },
 ]);

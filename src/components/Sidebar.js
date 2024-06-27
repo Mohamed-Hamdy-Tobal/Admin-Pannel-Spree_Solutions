@@ -104,14 +104,14 @@ const Sidebar = () => {
         <Link id={`item${text}`} to={link} className={`flex text-textDarkBlue hover:text-bgBlue justify-center ${isOpen ? 'p-3 items-start' : 'p-0 py-5 w-full items-center'} ${active ? 'text-bgBlue' : ''}`}>
             <FontAwesomeIcon icon={icon} className={`${active ? 'text-bgBlue' : 'text-iconGray '}`} />
             {isOpen ? "" : (
-                <Tooltip anchorSelect={`#item${text}`} place="top-start">{text}</Tooltip>
+                <Tooltip anchorSelect={`#item${text}`} place="right">{text}</Tooltip>
             )}
             {isOpen && <span className="ml-3">{text}</span>}
         </Link>
     );
 
     return (
-        <div className={`flex flex-col ${isOpen ? 'w-[256px]' : 'w-[50px]'} bg-white min-h-screen transition-width duration-300 shadow-md border-r-[1px] border-solid border-[#EBEFF2]`}
+        <div className={`z-[999999] flex flex-col ${isOpen ? 'w-[256px]' : 'w-[50px]'} bg-white min-h-screen transition-width duration-300 shadow-md border-r-[1px] border-solid border-[#EBEFF2]`}
             style={isOpen && isSmallScreen ? { position: 'fixed', top: 0, bottom: 0, left: 0, zIndex: 1000 } : {}}>
             <div className='flex justify-between items-center w-full  p-3 py-5'>
                 <div className={`logo ${isOpen ? "text-[24px]" : "text-[18px]"} font-bold  text-bgBlue `}>
@@ -122,6 +122,26 @@ const Sidebar = () => {
                         <FontAwesomeIcon icon={faClose} className="text-textDarkBlue" />
                     </button>
                 ) : ""}
+            </div>
+            <div className={`main-avatar flex justify-start items-center gap-3 ${isOpen ? 'p-3' : 'p-[8px]'} `}>
+                <div
+                    className={`avatar ${isOpen ? 'w-[46px] h-[46px]' : 'w-[34px] h-[34px]'} rounded-full bg-cover bg-center`}
+                    style={isOpen? { 
+                        backgroundImage: 'url(avatar.png)', 
+                        backgroundPositionY: '0px',
+                        backgroundPositionX: '-17px', 
+                        backgroundSize: '85px',
+                    }: { 
+                        backgroundImage: 'url(avatar.png)', 
+                        backgroundPositionY: '0px',
+                        backgroundPositionX: '-13px', 
+                        backgroundSize: '65px',
+                    }}
+                ></div>
+                <div className={`avatar-info ${isOpen ? 'block' : 'hidden'}`}>
+                    <div className='text-[14px] leading-[21px] font-medium text-bgBlack mb-1'>Ahmed Reda</div>
+                    <div className='text-[11px] leading-[16.5px] font-medium text-textGray'>#1253724</div>
+                </div>
             </div>
             <nav className={`flex-1 p-3 flex flex-col justify-start ${isOpen ? 'items-start' : 'items-center'}`}>
                 {/* {links.map((obj, index) => (
@@ -143,7 +163,7 @@ const Sidebar = () => {
                                         <span className="ml-3">{menu.title}</span>
                                     )}
                                     {isOpen ? "" : (
-                                        <Tooltip anchorSelect={`#item${index}`} place="top-start">{menu.title}</Tooltip>
+                                        <Tooltip anchorSelect={`#item${index}`} place="right">{menu.title}</Tooltip>
                                     )}
                                 </div>
                                 {openMenus[index] && (

@@ -56,7 +56,7 @@ const Sidebar = () => {
 
     const greenSVG = (
         <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="4" cy="4" r="3" stroke="#2ED47A" stroke-width="2" />
+            <circle cx="4" cy="4" r="3" stroke="#2ED47A" strokeWidth="2" />
         </svg>
     );
 
@@ -115,7 +115,7 @@ const Sidebar = () => {
             style={isOpen && isSmallScreen ? { position: 'fixed', top: 0, bottom: 0, left: 0, zIndex: 1000 } : {}}>
             <div className='flex justify-between items-center w-full  p-3 py-5'>
                 <div className={`logo ${isOpen ? "text-[24px]" : "text-[18px]"} font-bold  text-bgBlue `}>
-                    XO
+                    XO.
                 </div>
                 {isOpen && isSmallScreen ? (
                     <button onClick={() => dispatch(closeSidebar())} className="">
@@ -127,12 +127,12 @@ const Sidebar = () => {
                 <div
                     className={`avatar ${isOpen ? 'w-[46px] h-[46px]' : 'w-[34px] h-[34px]'} rounded-full bg-cover bg-center`}
                     style={isOpen? { 
-                        backgroundImage: 'url(avatar.png)', 
+                        backgroundImage: 'url(imgs/avatar.png)', 
                         backgroundPositionY: '0px',
                         backgroundPositionX: '-17px', 
                         backgroundSize: '85px',
                     }: { 
-                        backgroundImage: 'url(avatar.png)', 
+                        backgroundImage: 'url(imgs/avatar.png)', 
                         backgroundPositionY: '0px',
                         backgroundPositionX: '-13px', 
                         backgroundSize: '65px',

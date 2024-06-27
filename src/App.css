@@ -2,3 +2,16 @@
     z-index: 2000;
     display: block !important;
 }
+
+/* For Loading Component */
+.loader {
+    border-top-color: #3498db;
+    /* Change this to your desired color */
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

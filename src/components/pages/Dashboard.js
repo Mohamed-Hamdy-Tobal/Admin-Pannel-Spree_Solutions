@@ -117,7 +117,7 @@ const Dashboard = () => {
           </select>
           <div className='flex justify-start items-center gap-3 text-textDarkBlue'>
             Total :
-            <span className="text-sm text-bgBlue">
+            <span className="text-sm text-bgBlue font-semibold">
               Filter :  {filteredCount}
             </span>
           </div>

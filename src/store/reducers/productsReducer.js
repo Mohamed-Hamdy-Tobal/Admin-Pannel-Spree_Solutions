@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const endpoint = "https://sherifsorour.pythonanywhere.com/api/products"
-// const endpoint = "https://fakestoreapi.com/products"
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async (_, { rejectWithValue }) => {
     try {
